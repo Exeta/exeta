@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# $1 - features file
+# $2 - code file
+
+sh <<SH
+$(< "$1")
+cat <<CAT
+$(< "$2")
+CAT
+SH

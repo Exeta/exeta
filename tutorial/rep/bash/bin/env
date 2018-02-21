@@ -1,0 +1,4 @@
+sfx=sh
+exe="bash"
+gen=${exe}
+

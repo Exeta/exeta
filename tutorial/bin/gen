@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# $1 = server
+# $2 = task
+# $3 = task instance id
+
+. setenv $1
+
+${gen} > ${srvpath}/gen/"$3.${sfx}" <<EOF
+$(sub ${srvpath}/wrk/"$3.sh" ${srvpath}/src/"$2.${sfx}")
+EOF

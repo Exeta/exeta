@@ -1,0 +1,1 @@
+psql postgres --tuples-only --no-align --quiet --file=${1} >${2}

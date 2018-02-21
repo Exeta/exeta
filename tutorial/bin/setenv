@@ -1,0 +1,2 @@
+export srvpath=$(find ${EXETA_HOME}/rep -name $1 | sed -e "s/\(.*\)\/srv\/$1/\1/")
+. ${srvpath}/bin/env

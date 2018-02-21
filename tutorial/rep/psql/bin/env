@@ -1,0 +1,4 @@
+sfx=sql
+exe="psql postgres --set="ON_ERROR_STOP=true" --no-align --tuples-only"
+gen=${exe}
+

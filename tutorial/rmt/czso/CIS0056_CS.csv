@@ -1,0 +1,78 @@
+KODJAZ;AKRCIS;KODCIS;CHODNOTA;ZKRTEXT;TEXT;ADMPLOD;ADMNEPO;EGRFORMA
+"CS";"FORMA";56;"000";"Zatím neurèeno";"Zatím neurèeno";"01.01.1900";"09.09.9999";
+"CS";"FORMA";56;"101";"Fyz. os. podnikající dle iv. zákona";"Fyzická osoba podnikající dle ivnostenského zákona";"01.01.1900";"09.09.9999";"SP"
+"CS";"FORMA";56;"105";"Fyz.osoba ost.";"Fyzická osoba podnikající dle jinıch zákonù ne ivnostenského a zákona o zemìdìlství";"01.01.1900";"09.09.9999";"SP"
+"CS";"FORMA";56;"107";"Zem.podnik. - FO";"Zemìdìlskı podnikatel - fyzická osoba";"01.05.2004";"09.09.9999";"SP"
+"CS";"FORMA";56;"111";"Veøejná obch.spoleènost";"Veøejná obchodní spoleènost";"01.01.1900";"09.09.9999";"PA"
+"CS";"FORMA";56;"112";"Spoleènost s r.o.";"Spoleènost s ruèením omezenım";"01.01.1900";"09.09.9999";"LL"
+"CS";"FORMA";56;"113";"Spoleènost komanditní";"Spoleènost komanditní";"01.01.1900";"09.09.9999";"PA"
+"CS";"FORMA";56;"115";"Spoleènı podnik";"Spoleènı podnik";"01.01.1900";"09.09.9999";"PA"
+"CS";"FORMA";56;"116";"Zájmové sdruení";"Zájmové sdruení";"01.01.1900";"09.09.9999";"NB"
+"CS";"FORMA";56;"117";"Nadace";"Nadace";"01.01.1900";"09.09.9999";"NB"
+"CS";"FORMA";56;"118";"Nadaèní fond";"Nadaèní fond";"01.01.1998";"09.09.9999";"NB"
+"CS";"FORMA";56;"121";"Akciová spoleènost";"Akciová spoleènost";"01.01.1900";"09.09.9999";"LL"
+"CS";"FORMA";56;"141";"Obecnì prospìšná spol.";"Obecnì prospìšná spoleènost";"01.01.1996";"09.09.9999";"NB"
+"CS";"FORMA";56;"145";"Spoleèen.vlast.jednot.";"Spoleèenství vlastníkù jednotek";"01.04.2000";"09.09.9999";"NB"
+"CS";"FORMA";56;"151";"Komoditní burza";"Komoditní burza";"01.01.2010";"09.09.9999";"GO"
+"CS";"FORMA";56;"161";"Ústav";"Ústav";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"205";"Drustvo";"Drustvo";"01.01.1991";"09.09.9999";"LL"
+"CS";"FORMA";56;"301";"Státní podnik";"Státní podnik";"01.01.1900";"09.09.9999";"LL"
+"CS";"FORMA";56;"313";"Èeská národní banka";"Èeská národní banka";"01.01.1993";"09.09.9999";"GO"
+"CS";"FORMA";56;"325";"Org. sloka státu";"Organizaèní sloka státu";"01.01.2001";"09.09.9999";"GO"
+"CS";"FORMA";56;"326";"Stálı rozhodèí soud";"Stálı rozhodèí soud";"01.04.2013";"09.09.9999";
+"CS";"FORMA";56;"331";"Pøíspìvková organizace";"Pøíspìvková organizace";"01.01.1900";"09.09.9999";"GO"
+"CS";"FORMA";56;"352";"Správa el.dopr.cesty";"Správa eleznièní dopravní cesty, státní organizace";"01.01.1993";"09.09.9999";"GO"
+"CS";"FORMA";56;"353";"Rada pro veø. dohled nad auditem";"Rada pro veøejnı dohled nad auditem";"01.04.2009";"09.09.9999";"GO"
+"CS";"FORMA";56;"361";"Veøejnoprávní instituce";"Veøejnoprávní instituce (ÈT,ÈRo,ÈTK)";"01.01.1993";"09.09.9999";"GO"
+"CS";"FORMA";56;"381";"Fond (ze zákona)";"Fond (ze zákona)";"01.06.1991";"09.09.9999";"GO"
+"CS";"FORMA";56;"391";"Zdravotní pojišovna";"Zdravotní pojišovna";"01.05.1993";"09.09.9999";"GO"
+"CS";"FORMA";56;"421";"Odšt.záv.zahr.práv.os.";"Odštìpnı závod zahranièní právnické osoby";"01.01.1900";"09.09.9999";"LL"
+"CS";"FORMA";56;"422";"Organiz.sloka zahr.nadaè.fondu";"Organizaèní sloka zahranièního nadaèního fondu";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"423";"Organi.sloka zahr.nadace";"Organizaèní sloka zahranièní nadace";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"424";"Zahr.fyzická osoba";"Zahranièní fyzická osoba";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"425";"Odštìp.závod zahr.fyz.osoby";"Odštìpnı závod zahranièní fyzické osoby";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"501";"Odštìp.záv.zaps.v ob.r.";"Odštìpnı závod nebo jiná organizaèní sloka podniku zapisující se do obchodního rejstøíku";"01.01.1900";"09.09.9999";"LL"
+"CS";"FORMA";56;"521";"Sam.drob.provozovna ob.";"Samostatná drobná provozovna obecního úøadu";"01.01.1900";"09.09.9999";"GO"
+"CS";"FORMA";56;"541";"Podílovı, penzijní fond";"Podílovı, penzijní fond";"01.09.1993";"09.09.9999";"LL"
+"CS";"FORMA";56;"601";"Vysoká škola";"Vysoká škola";"01.01.1900";"09.09.9999";"GO"
+"CS";"FORMA";56;"641";"Školská právnická osoba";"Školská právnická osoba";"01.01.2005";"09.09.9999";"GO"
+"CS";"FORMA";56;"661";"Veø. vızkumná instituce";"Veøejná vızkumná instituce";"13.09.2005";"09.09.9999";"GO"
+"CS";"FORMA";56;"703";"Odbor.organizace a org. zamìstnavatelù";"Odborová organizace a organizace zamìstnavatelù";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"704";"Zvl.org.pro zast.èes.zájmù v mezinár.nevlád.organizacích";"Zvláštní organizace pro zastoupení èeskıch zájmù v mezinárodních nevládních organizacích";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"705";"Podnik nebo hosp.zaøíz.";"Podnik nebo hospodáøské zaøízení sdruení";"01.01.1900";"09.09.9999";"ND"
+"CS";"FORMA";56;"706";"Spolek";"Spolek";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"711";"Politická strana, hnutí";"Politická strana, politické hnutí";"01.01.1900";"09.09.9999";"NB"
+"CS";"FORMA";56;"715";"Pod.nebo hos.zaø.pol.s.";"Podnik nebo hospodáøské zaøízení politické strany";"01.01.1900";"09.09.9999";
+"CS";"FORMA";56;"721";"Církve a náb.spoleènosti";"Církve a náboenské spoleènosti";"01.01.1900";"09.09.9999";"NB"
+"CS";"FORMA";56;"722";"Evid.círk.práv.osoby";"Evidované církevní právnické osoby";"01.01.2017";"09.09.9999";
+"CS";"FORMA";56;"723";"Svaz církví a náb.spol.";"Svazy církví a náboenskıch spoleèností";"01.01.2017";"09.09.9999";
+"CS";"FORMA";56;"731";"Org.jednotka sdruení";"Organizaèní jednotka sdruení";"01.01.1900";"09.09.9999";"NB"
+"CS";"FORMA";56;"732";"Org.jedn.pol.strany,hn.";"Organizaèní jednotka politické strany, politického hnutí";"01.01.1900";"09.09.9999";
+"CS";"FORMA";56;"733";"Org.jedn.odborové org. a org.zamìstnavatelù";"Organizaèní jednotka odborové organizace a organizace zamìstnavatelù";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"734";"Org.jedn.zvl.org.pro zast.èes.záj.v mez.nevl.org.";"Organizaèní jednotka zvláštní organizace pro zastoupení èeskıch zájmù v mezinárodních nevládních organizacích";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"736";"Poboènı spolek";"Poboènı spolek";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"741";"Stav.org.-profesní kom.";"Stavovská organizace - profesní komora";"01.01.1900";"09.09.9999";"NB"
+"CS";"FORMA";56;"745";"Komora s vıj.prof.komor";"Komora (s vıjimkou profesních komor)";"01.01.1992";"09.09.9999";"NB"
+"CS";"FORMA";56;"751";"Zájm.sdruení práv.osob";"Zájmové sdruení právnickıch osob";"01.01.1992";"09.09.9999";"NB"
+"CS";"FORMA";56;"761";"Honební spoleèenstvo";"Honební spoleèenstvo";"01.07.2002";"09.09.9999";"NB"
+"CS";"FORMA";56;"771";"Svazek obcí";"Svazek obcí";"01.01.2001";"09.09.9999";"NB"
+"CS";"FORMA";56;"801";"Obec nebo mìstská èást hlavního mìsta Prahy";"Obec nebo mìstská èást hlavního mìsta Prahy";"01.01.1900";"09.09.9999";"GO"
+"CS";"FORMA";56;"804";"Kraj a hl.m.Praha";"Kraj a hl.m.Praha";"01.11.2000";"09.09.9999";"GO"
+"CS";"FORMA";56;"805";"Reg.rada regionu soudr.";"Regionální rada regionu soudrnosti";"01.07.2006";"09.09.9999";"GO"
+"CS";"FORMA";56;"901";"Zast.orgán jinıch státù";"Zastupitelskı orgán jinıch státù";"01.01.1900";"09.09.9999";
+"CS";"FORMA";56;"906";"Zahranièní spolek";"Zahranièní spolek";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"907";"Mezinárodní odborová organizace";"Mezinárodní odborová organizace";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"908";"Mezinárodní organizace zamìstnavetelù";"Mezinárodní organizace zamìstnavatelù";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"911";"Zahr.kult.støed.,agent.";"Zahranièní kulturní, informaèní støedisko, rozhlasová, tisková a televizní agentura";"01.01.1900";"09.09.9999";"ND"
+"CS";"FORMA";56;"921";"Mezinár.nevlád.org.";"Mezinárodní nevládní organizace";"01.01.1900";"09.09.9999";"ND"
+"CS";"FORMA";56;"922";"Org.jed.mezinár.nevládní org.";"Organizaèní jednotka mezinárodní nevládní organizace";"01.07.2010";"09.09.9999";"ND"
+"CS";"FORMA";56;"931";"Ev.hosp.zájm.sdruení";"Evropské hospodáøské zájmové sdruení";"15.06.2004";"09.09.9999";"NB"
+"CS";"FORMA";56;"932";"Evropská spoleènost";"Evropská spoleènost";"14.12.2004";"09.09.9999";"LL"
+"CS";"FORMA";56;"933";"Evr.drust.spoleènost";"Evropská drustevní spoleènost";"18.08.2006";"09.09.9999";"LL"
+"CS";"FORMA";56;"936";"Zahranièní poboènı spolek";"Zahranièní poboènı spolek";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"937";"Poboèná mezinárodní odborová organizace";"Poboèná mezinárodní odborová organizace";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"938";"Poboè. mezinár. org. zamìstnavatelù";"Poboèná mezinárodní organizace zamìstnavatelù";"01.01.2014";"09.09.9999";
+"CS";"FORMA";56;"941";"Evr.seskupení úz.spolupr.";"Evropské seskupení pro územní spolupráci";"01.01.2008";"09.09.9999";"ND"
+"CS";"FORMA";56;"950";"Subjekt práv.øád.neupravenı";"Subjekt právním øádem vıslovnì neupravenı";"01.07.2007";"09.09.9999";"ND"
+"CS";"FORMA";56;"960";"Právnická osoba zøíz.zvl.zák.zap.do VR";"Právnická osoba zøízená zvláštním zákonem zapisovaná do veøejného rejstøíku";"01.06.2016";"09.09.9999";
+

@@ -1,0 +1,7 @@
+export EXETA_TUTORIAL_HOME=${HOME}/Exeta/tutorial
+export EXETA_HOME=${EXETA_TUTORIAL_HOME}
+if [[ ${PATH} != *:${EXETA_HOME}/bin:* ]] \
+&& [[ ${PATH} !=   ${EXETA_HOME}/bin:* ]] \
+&& [[ ${PATH} != *:${EXETA_HOME}/bin   ]]
+    then export PATH=${EXETA_HOME}/bin:${PATH}
+fi

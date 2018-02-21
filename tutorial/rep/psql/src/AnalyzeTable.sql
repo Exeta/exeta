@@ -1,0 +1,2 @@
+analyze ${Schema}.${Table}
+;

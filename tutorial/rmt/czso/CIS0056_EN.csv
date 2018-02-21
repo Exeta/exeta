@@ -1,0 +1,78 @@
+KODJAZ;AKRCIS;KODCIS;CHODNOTA;ZKRTEXT;TEXT;ADMPLOD;ADMNEPO;EGRFORMA
+"EN";"FORMA";56;"000";"Not specified";"Not specified";"01.01.1900";"09.09.9999";
+"EN";"FORMA";56;"101";"Natural person  in business under the Trade Act";"Natural person  in business under the Trade Act";"01.01.1900";"09.09.9999";"SP"
+"EN";"FORMA";56;"105";"Natural person  in business under different Acts";"Natural person  in business under different Acts than the Trade Act and Agriculture Act";"01.01.1900";"09.09.9999";"SP"
+"EN";"FORMA";56;"107";"Agricultural entrepreneur - natural person";"Agricultural entrepreneur - natural person";"01.05.2004";"09.09.9999";"SP"
+"EN";"FORMA";56;"111";"General commercial partnership";"General commercial partnership";"01.01.1900";"09.09.9999";"PA"
+"EN";"FORMA";56;"112";"Limited liability company";"Limited liability company";"01.01.1900";"09.09.9999";"LL"
+"EN";"FORMA";56;"113";"Limited partnership";"Limited partnership";"01.01.1900";"09.09.9999";"PA"
+"EN";"FORMA";56;"115";"Joint venture";"Joint venture";"01.01.1900";"09.09.9999";"PA"
+"EN";"FORMA";56;"116";"Interest association";"Interest association";"01.01.1900";"09.09.9999";"NB"
+"EN";"FORMA";56;"117";"Foundation";"Foundation";"01.01.1900";"09.09.9999";"NB"
+"EN";"FORMA";56;"118";"Endowment fund";"Endowment fund";"01.01.1998";"09.09.9999";"NB"
+"EN";"FORMA";56;"121";"Joint-stock company";"Joint-stock company";"01.01.1900";"09.09.9999";"LL"
+"EN";"FORMA";56;"141";"Public Service Company";"Public Service Company";"01.01.1996";"09.09.9999";"NB"
+"EN";"FORMA";56;"145";"Association of unit owners";"Association of unit owners";"01.04.2000";"09.09.9999";"NB"
+"EN";"FORMA";56;"151";"Commodity exchange";"Commodity exchange";"01.01.2010";"09.09.9999";"GO"
+"EN";"FORMA";56;"161";"Institute";"Institute";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"205";"Cooperative";"Cooperative";"01.01.1991";"09.09.9999";"LL"
+"EN";"FORMA";56;"301";"State-owned enterprise";"State-owned enterprise";"01.01.1900";"09.09.9999";"LL"
+"EN";"FORMA";56;"313";"Czech National Bank";"Czech National Bank";"01.01.1993";"09.09.9999";"GO"
+"EN";"FORMA";56;"325";"Organizational units of the state";"Organizational units of the state";"01.01.2001";"09.09.9999";"GO"
+"EN";"FORMA";56;"326";"Permanent Court of Arbitration";"Permanent Court of Arbitration";"01.04.2013";"09.09.9999";
+"EN";"FORMA";56;"331";"Semi-budgetary organization";"Semi-budgetary organization";"01.01.1900";"09.09.9999";"GO"
+"EN";"FORMA";56;"352";"The Railway Infrastructure Administration,state organization";"The Railway Infrastructure Administration, state organization";"01.01.1993";"09.09.9999";"GO"
+"EN";"FORMA";56;"353";"The Council for Public Audit Supervision";"The Council for Public Audit Supervision";"01.04.2009";"09.09.9999";"GO"
+"EN";"FORMA";56;"361";"Public legal institution";"Public legal institution";"01.01.1993";"09.09.9999";"GO"
+"EN";"FORMA";56;"381";"Fund (from the law)";"Fund (from the law)";"01.06.1991";"09.09.9999";"GO"
+"EN";"FORMA";56;"391";"Health insurance company";"Health insurance company";"01.05.1993";"09.09.9999";"GO"
+"EN";"FORMA";56;"421";"Branch of foreign legal entity";"Branch of foreign legal entity";"01.01.1900";"09.09.9999";"LL"
+"EN";"FORMA";56;"422";"An organizational unit of a foreign Endowment Fund";"An organizational unit of a foreign Endowment Fund";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"423";"An organizational unit of a foreign foundation";"An organizational unit of a foreign foundation";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"424";"Foreign natural person";"Foreign natural person";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"425";"Branch of foreign natural person";"Branch of foreign natural person";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"501";"Branch or oth.org.unit of the comp.reg.in the Comp.Regist.";"Branch or other organizational unit of the company registered in the Companies Register";"01.01.1900";"09.09.9999";"LL"
+"EN";"FORMA";56;"521";"Separate small workshop of municipal office";"Separate small workshop of municipal office";"01.01.1900";"09.09.9999";"GO"
+"EN";"FORMA";56;"541";"Unit trust and pension fund";"Unit trust and pension fund";"01.09.1993";"09.09.9999";"LL"
+"EN";"FORMA";56;"601";"University and College";"University and College";"01.01.1900";"09.09.9999";"GO"
+"EN";"FORMA";56;"641";"School legal entity";"School legal entity";"01.01.2005";"09.09.9999";"GO"
+"EN";"FORMA";56;"661";"Public research institution";"Public research institution";"13.09.2005";"09.09.9999";"GO"
+"EN";"FORMA";56;"703";"Trade union and employers' organizations";"Trade union and employers' organizations";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"704";"Spec.organizat.for represent.of Czech interests in inter.NGO";"Special organization for representation of Czech interests in international non governmental organizations";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"705";"Enterprise or economic establishment of an association";"Enterprise or economic establishment of an association";"01.01.1900";"09.09.9999";"ND"
+"EN";"FORMA";56;"706";"Society";"Society";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"711";"Political party, political movement";"Political party, political movement";"01.01.1900";"09.09.9999";"NB"
+"EN";"FORMA";56;"715";"Enterprise or economic establishment of a political party";"Enterprise or economic establishment of a political party";"01.01.1900";"09.09.9999";
+"EN";"FORMA";56;"721";"Churches and religious societies";"Churches and religious societies";"01.01.1900";"09.09.9999";"NB"
+"EN";"FORMA";56;"722";"Registered religions legal entities";"Registered religions legal entities";"01.01.2017";"09.09.9999";
+"EN";"FORMA";56;"723";"Associations churches and religions societies";"Associations churches and religions societies";"01.01.2017";"09.09.9999";
+"EN";"FORMA";56;"731";"Organizational unit of an association";"Organizational unit of an association";"01.01.1900";"09.09.9999";"NB"
+"EN";"FORMA";56;"732";"An organizational unit of a politic.party,political movement";"An organizational unit of a political party, political movement";"01.01.1900";"09.09.9999";
+"EN";"FORMA";56;"733";"An org.unit of a trade union and employers' organizations";"An organizational unit of a trade union and employers' organizations";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"734";"An org.unit of a spec.org.f.repr.of Cz.interest in inter.NGO";"An organizational unit of a special organization for representation of Czech interests in international non governmental organizations";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"736";"Branch of society";"Branch of society";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"741";"Professional organization - professional chamber";"Professional organization - professional chamber";"01.01.1900";"09.09.9999";"NB"
+"EN";"FORMA";56;"745";"Chamber (except professional chambers)";"Chamber (except professional chambers)";"01.01.1992";"09.09.9999";"NB"
+"EN";"FORMA";56;"751";"Special interest association of legal persons";"Special interest association of legal persons";"01.01.1992";"09.09.9999";"NB"
+"EN";"FORMA";56;"761";"Hunting community";"Hunting community";"01.07.2002";"09.09.9999";"NB"
+"EN";"FORMA";56;"771";"Microregion";"Microregion";"01.01.2001";"09.09.9999";"NB"
+"EN";"FORMA";56;"801";"Municipality or district of the capital city";"Municipality or district of the capital city";"01.01.1900";"09.09.9999";"GO"
+"EN";"FORMA";56;"804";"The Region and Capital City";"The Region and Capital City";"01.11.2000";"09.09.9999";"GO"
+"EN";"FORMA";56;"805";"Regional council of cohesion region";"Regional council of cohesion region";"01.07.2006";"09.09.9999";"GO"
+"EN";"FORMA";56;"901";"Representative authority of other countries";"Representative authority of other countries";"01.01.1900";"09.09.9999";
+"EN";"FORMA";56;"906";"Foreign society";"Foreign society";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"907";"International trade union organization";"International trade union organization";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"908";"International Organization of Employers";"International Organization of Employers";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"911";"Foreign cultural or infor.center, radio, press and TV agency";"Foreign cultural or information center, radio, press and television agency";"01.01.1900";"09.09.9999";"ND"
+"EN";"FORMA";56;"921";"International non governmental organization";"International non governmental organization";"01.01.1900";"09.09.9999";"ND"
+"EN";"FORMA";56;"922";"Organizational unit of International NGO";"Organizational unit of International non governmental organization";"01.07.2010";"09.09.9999";"ND"
+"EN";"FORMA";56;"931";"European Economic Interest Group";"European Economic Interest Group";"15.06.2004";"09.09.9999";"NB"
+"EN";"FORMA";56;"932";"European company (SE)";"European company (SE)";"14.12.2004";"09.09.9999";"LL"
+"EN";"FORMA";56;"933";"European Cooperative Society";"European Cooperative Society";"18.08.2006";"09.09.9999";"LL"
+"EN";"FORMA";56;"936";"Foreign branch of society";"Foreign branch of society";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"937";"The subsidiary of international trade union organization";"The subsidiary of international trade union organization";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"938";"The subsidiary of  International Organisation of Employers";"The subsidiary of  International Organisation of Employers";"01.01.2014";"09.09.9999";
+"EN";"FORMA";56;"941";"European grouping of territorial cooperation (EGTC)";"European grouping of territorial cooperation (EGTC)";"01.01.2008";"09.09.9999";"ND"
+"EN";"FORMA";56;"950";"Organization not explicitly defined by legal order";"Organization not explicitly defined by legal order";"01.07.2007";"09.09.9999";"ND"
+"EN";"FORMA";56;"960";"Legal unit established by a spec.law listed in a pub.regist.";"Legal unit established by a special law listed in a public register";"01.06.2016";"09.09.9999";
+

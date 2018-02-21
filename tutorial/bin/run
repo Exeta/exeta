@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# $1 = server
+# $2 = task
+# $3 = task instance id
+
+. setenv $1
+
+if [ ! -e ${srvpath}/gen/"$3.${sfx}" ]
+then
+    cp ${srvpath}/src/"$2.${sfx}" ${srvpath}/gen/"$3.${sfx}"
+fi
+sub ${srvpath}/wrk/"$3.sh" ${srvpath}/gen/"$3.${sfx}" >  ${srvpath}/exe/"$3.${sfx}"
+${exe} <<EOF
+$(< ${srvpath}/exe/"$3.${sfx}")
+EOF
