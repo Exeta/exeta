@@ -1,0 +1,213 @@
+\documentclass[english,xcolor={dvipsnames}]{beamer}
+%\documentclass[english,handout]{beamer}
+
+\usepackage{default}
+\usepackage{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{fancyvrb}
+
+\usetheme{Montpellier}
+\usecolortheme{beaver}
+
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\usetikzlibrary{arrows,calc}
+
+\newcommand*{\fvtextcolor}[2]{\textcolor{#1}{#2}}
+
+\title{Exeta}
+%\author{}
+%\date{April 1, 2016}
+
+\begin{document}
+
+\frame{%
+\titlepage
+}
+
+%\frame{%
+%\frametitle{Table of Contents}%
+%\tableofcontents%
+%}
+
+\section{Overview}
+
+\begin{frame}
+\frametitle{Overview}
+\begin{itemize}
+    \item Development
+    \begin{itemize}
+        \item Source files (task definition \& task script \& server script)
+        \item Compiler
+        %\item $3^{\text{rd}}$ party tools (text editor, Oracle SQL Developer, Teradata SQL Assistant, \ldots)
+    \end{itemize}
+    \item Operation
+    \begin{itemize}
+        \item Console % (for monitoring and operating)
+        \item Repository
+        \item Engine
+        \item Servers (generators \& executors) %(bash, ssh, sftp, SQL*Plus, BTEQ, \ldots)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{Development}
+
+\subsection{Source files}
+
+\begin{frame}
+\frametitle{Source files}
+Source files answers the following questions:
+\begin{itemize}
+    \item \emph{What} should be done? (tasks)
+    \item \emph{When} should it be done? (schedules, time stamps)
+    \item \emph{Where} should it be done? (servers -- generators \& executors)
+    \item What to do if it fails? (recovery)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Source files}
+\begin{itemize}
+    \item Task is the only entity Exeta works with. It has
+    \begin{itemize}
+        \item name
+        \item identifiers
+        \item features
+        \item rules
+        \item body
+    \end{itemize}
+    \item There are two types of source files in Exeta with different content:
+    \begin{itemize}
+        \item Task definition -- source files following Exeta syntax % (\texttt{*.e})
+        \item Task content -- parametrized scripts of type dependent on the task's executor or generator % (\texttt{*.sql}, \texttt{*.sh}, etc.)
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\subsection{Example}
+
+\begin{frame}[fragile]
+\frametitle{\texttt{main} task}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[BrickRed][task] main
++fvtextcolor[Blue][call] LoadEDW +fvtextcolor[Gray][||] LoadCDRRep
+;
+\end{Verbatim}
+\begin{itemize}
+    \item Task \verb|main| has a similar meaning in Exeta as \verb|main| function in a C program.
+    \item Each task that should be executed in the execution environment needs to be reachable from the \verb|main| task.
+    \item The task \verb|main| calls independently (in parallel) its 2 subtasks: \verb|LoadEDW| and \verb|LoadCDRRep|.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadEDW}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[BrickRed][task] LoadEDW
++fvtextcolor[Blue][with] +fvtextcolor[OliveGreen][executor] +fvtextcolor[Gray][=] +fvtextcolor[Orange][EDW]
++fvtextcolor[Blue][call] LoadSA +fvtextcolor[Gray][||] LoadDW
+;
+\end{Verbatim}
+\begin{itemize}
+    \item Task \verb|LoadEDW| has one feature \verb|executor| with value \verb|EDW|.
+    \item It calls independently (in parallel) \verb|LoadSA| and \verb|LoadDW|.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadDW}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[BrickRed][task] LoadDW
++fvtextcolor[Blue][call] LoadDWDaily +fvtextcolor[Gray][||] LoadDWMonthly
+;
+\end{Verbatim}
+\begin{itemize}
+    \item Task \verb|LoadDW| is further split into daily and monthly loads.
+    \item All this hierarchy of nested tasks is defined once and changed rarely.
+    \item Real programmer's job begins on the next slide.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadDWDaily}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[BrickRed][task] LoadDWDaily
++fvtextcolor[Blue][with] +fvtextcolor[OliveGreen][schedule] +fvtextcolor[Gray][=] +fvtextcolor[Gray][(] +fvtextcolor[Orange][0 0 * * *] +fvtextcolor[Gray][)]
++fvtextcolor[Blue][call] LoadTable +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][dw_owner]+fvtextcolor[Gray][}] +fvtextcolor[Orange][DW_ACCOUNT]
+     +fvtextcolor[Blue][with] +fvtextcolor[OliveGreen][IdList] +fvtextcolor[Gray][=] +fvtextcolor[Gray]["]+fvtextcolor[Orange][ACCT_SRC_ID,IC,ACCOUNT_NAME]+fvtextcolor[Gray]["]
+        +fvtextcolor[Gray][,] +fvtextcolor[OliveGreen][Method] +fvtextcolor[Gray][=] +fvtextcolor[Orange][SCD2]
+     +fvtextcolor[Blue][when] LoadTable +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][int_owner]+fvtextcolor[Gray][}] +fvtextcolor[Orange][V4S_S_ORG_EXT] +fvtextcolor[Blue][succeeded]
+  +fvtextcolor[Gray][||] LoadTable +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][dw_owner]+fvtextcolor[Gray][}] +fvtextcolor[Orange][DW_SUBSCRIBER]
+     +fvtextcolor[Blue][with] +fvtextcolor[OliveGreen][IdList] +fvtextcolor[Gray][=] +fvtextcolor[Gray]["]+fvtextcolor[Orange][SUBSCR_SRC_ID,MSISDN]+fvtextcolor[Gray]["]
+        +fvtextcolor[Gray][,] +fvtextcolor[OliveGreen][Method] +fvtextcolor[Gray][=] +fvtextcolor[Orange][SCD2]
+     +fvtextcolor[Blue][when] LoadTable +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][dw_owner]+fvtextcolor[Gray][}]  +fvtextcolor[Orange][DW_ACCOUNT]  +fvtextcolor[Blue][succeeded]
+      +fvtextcolor[Blue][and] LoadTable +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][int_owner]+fvtextcolor[Gray][}] +fvtextcolor[Orange][V4S_S_ASSET] +fvtextcolor[Blue][succeeded]
+;
+\end{Verbatim}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadDWDaily}
+\begin{itemize}
+    \item There has to be a call of \verb|LoadTable| task in the superior \verb|LoadDWDaily| task for each DW table loaded daily.
+    \item The table schema and name is specified by two \emph{identifiers} put just behind the \verb|LoadTable| task name.
+    \item Identifier values unambiguously determine an instance of the \verb|LoadTable| task.
+    \item In addition to identifiers each task call can have several \emph{features} specified by \emph{with clause}.
+    \item A value of an identifier or feature is referenced by its name enclosed by \verb|${| and \verb|}| (e.g., \verb|${dw_owner}|).
+    \item A task instance is called when all dependencies given by its \emph{when clause} are satisfied.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadTable}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[Red][task] LoadTable +fvtextcolor[OliveGreen][Schema] +fvtextcolor[OliveGreen][Table]
++fvtextcolor[Blue][when failed then submit same]
++fvtextcolor[Blue][call] PrepWrkTab.+fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Method]+fvtextcolor[Gray][}] +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Schema]+fvtextcolor[Gray][}] +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Table]+fvtextcolor[Gray][}]
+  +fvtextcolor[Gray][->] LoadWrkTab.+fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Schema]+fvtextcolor[Gray][}].+fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Table]+fvtextcolor[Gray][}]
+  +fvtextcolor[Gray][->] LoadTgtTab.+fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Method]+fvtextcolor[Gray][}] +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Schema]+fvtextcolor[Gray][}] +fvtextcolor[Gray][${]+fvtextcolor[OliveGreen][Table]+fvtextcolor[Gray][}]
+;
+\end{Verbatim}
+\begin{itemize}
+    \item \verb|LoadTable| is a generic task.
+    \item It calls in sequence other tasks of parametrized names.
+    \item For each method (\verb|SCD1|, \verb|SCD2|, etc.) there must be \verb|PrepWrkTab.${Method}| task defined (\verb|PrepWrkTab.SCD1|, \verb|PrepWrkTab.SCD2|, etc.).
+    \item The same holds for \verb|LoadTgtTab.${Method}| task.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadWrkTab.DW\_OWNER.DW\_ACCOUNT}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[Red][task] LoadWrkTab.DW_OWNER.DW_ACCOUNT
++fvtextcolor[Blue][call] LoadWrkTab.DW_OWNER.DW_ACCOUNT.01
+  +fvtextcolor[Gray][->] +fvtextcolor[Gray][(]  LoadWrkTab.DW_OWNER.DW_ACCOUNT.02
+     +fvtextcolor[Gray][||] LoadWrkTab.DW_OWNER.DW_ACCOUNT.03
+     +fvtextcolor[Gray][)]
+  +fvtextcolor[Gray][->] LoadWrkTab.DW_OWNER.DW_ACCOUNT.04
+;
+\end{Verbatim}
+\begin{itemize}
+    \item The \verb|LoadWrkTab.${Schema}.${Table}| is different.
+    \item It must be specified for each table separately.
+    \item Here, you can see an example for \verb|DW_OWNER.DW_ACCOUNT| table.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{LoadWrkTab.DW\_OWNER.DW\_ACCOUNT.01-04}
+\begin{Verbatim}[commandchars=+\[\]]
++fvtextcolor[Red][task] LoadWrkTab.DW_OWNER.DW_ACCOUNT.01 +fvtextcolor[Blue][execute code]
++fvtextcolor[Red][task] LoadWrkTab.DW_OWNER.DW_ACCOUNT.02 +fvtextcolor[Blue][execute code]
++fvtextcolor[Red][task] LoadWrkTab.DW_OWNER.DW_ACCOUNT.03 +fvtextcolor[Blue][execute code]
++fvtextcolor[Red][task] LoadWrkTab.DW_OWNER.DW_ACCOUNT.04 +fvtextcolor[Blue][execute code]
+\end{Verbatim}
+\begin{itemize}
+    \item Finally, we reached tasks that call no other nested tasks.
+    \item These tasks execute SQL scripts that are placed in an appropriate place in a file system given by an executor name and a task name.
+\end{itemize}
+\end{frame}
+
+\end{document}

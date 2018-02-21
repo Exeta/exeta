@@ -1,0 +1,10 @@
+﻿SQL Parser, Impact Analysis, Data Lineage:
+http://www.sqlparser.com
+
+
+ANSI SQL Grammar:
+http://savage.net.au/SQL/
+
+
+Eclipse SQL Parser:
+http://www.eclipse.org/datatools/project_sqldevtools/

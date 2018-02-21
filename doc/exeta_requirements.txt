@@ -1,0 +1,20 @@
+﻿Requirements:
+
+[R001] Tasks that can be automated will be generated automaticaly based on metadata.
+[R002] Tasks that cannot be automated will be accomplished by the process of a stage object (table) creation.
+[R003] Generators for various RDBMS (Oracle, Teradata, Netezza, MS SQL Server, PostgreSQL) and OS (unix, linux, MS Windows) will be implemented.
+[R004] Each task is an atomic transaction.
+[R005] Tasks can be grouped together in order to make their operating, monitoring, and problem detection easier.
+[R006] Tasks will be submitted as independent jobs that can run in parallel.
+[R007] There will be dependencies between task instances (task with specific parameters' values).
+       Dependency can be either positive (task succeeded) or negative (task failed).
+       Dependency can be complex (e.g., (D1 AND D2 AND D3) OR (D4 AND D5) OR (D6 AND D7 AND D9)).
+       Other conditions (e.g., checks of a source data availability) will be realized as separate tasks.
+[R008] Each task can be submitted on different server using different login credentials.
+[R009] Each server will have a limit for a number of tasks that can run on this server in parallel.
+[R010] A priority (or importance) will be assigned to each task (or group of tasks).
+       This priority will determine tasks' run order.
+[R011] A number of attempts will be assigned to each task. This number will determine a number of task restarts in case of its failure.
+[R012] Each task execution will be logged including parameter values used and execution status, start and completion timestamp.
+[R013] Some parameters can be defined as global parameters.
+

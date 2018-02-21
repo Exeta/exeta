@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+ This file is part of GtkSourceView
+
+ Author: Martin Procházka <martproc@gmail.com>
+ Copyright (C) 2017 Martin Procházka <martproc@gmail.com>
+
+ GtkSourceView is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+
+ GtkSourceView is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+
+ You should have received a copy of the GNU Lesser General Public
+ License along with this library; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+-->
+<language id="exeta" _name="exeta" version="1.0" _section="Scripts">
+  <metadata>
+    <property name="mimetypes">text/x-exeta;application/x-exeta;text/x-e</property>
+    <property name="globs">*.e</property>
+    <property name="line-comment-start">#</property>
+  </metadata>
+
+  <styles>
+    <style id="comment"             _name="Comment"             map-to="def:comment"/>
+    <style id="function"            _name="Function"            map-to="def:function"/>
+    <style id="string"              _name="String"              map-to="def:string"/>
+    <style id="keyword"             _name="Keyword"             map-to="def:keyword"/>
+    <style id="variable"            _name="Variable"            map-to="def:type"/> <!-- FIXME: need to sort out proper styles for variables -->
+    <style id="variable-definition" _name="Variable Definition" map-to="sh:variable"/>
+    <style id="others"              _name="Others"              map-to="def:keyword"/>
+    <style id="common-command"      _name="Common Commands"     map-to="def:keyword"/>
+    <style id="here-doc-bound"      _name="Heredoc Bound"       map-to="def:keyword"/>
+    <style id="subshell"            _name="Subshell"            map-to="def:preprocessor"/>
+  </styles>
+
+  <definitions>
+
+    <context id="line-comment" style-ref="comment" end-at-line-end="true" class="comment" class-disabled="no-spell-check">
+      <start>#</start>
+      <include>
+        <context ref="def:in-comment"/>
+      </include>
+    </context>
+
+    <context id="double-quoted-string" style-ref="string" class="string" class-disabled="no-spell-check">
+      <start>"</start>
+      <end>"</end>
+      <include>
+        <context style-ref="def:special-char">
+            <match>\\[$`"\\]</match>
+        </context>
+        <context>
+            <match>\\</match>
+        </context>
+        <context ref="def:line-continue"/>
+        <context ref="variable"/>
+      </include>
+    </context>
+
+    <context id="variable" style-ref="variable">
+      <match>\$+[!@?*#\${a-zA-Z0-9_][}a-zA-Z0-9_]*</match>
+    </context>
+
+    <context id="variable-definition">
+      <match>(^\s*|(?&lt;=then|else|do|export)\s+)([a-zA-Z_][a-zA-Z0-9_]*)\=</match>
+      <include>
+        <context sub-pattern="2" style-ref="variable-definition"/>
+      </include>
+    </context>
+
+    <context id="built-in-command" style-ref="keyword">
+      <prefix>^[ \t]*</prefix>
+      <keyword>task</keyword>
+      <keyword>with</keyword>
+      <keyword>when</keyword>
+      <keyword>succeeded</keyword>
+      <keyword>skipped</keyword>
+      <keyword>failed</keyword>
+      <keyword>then</keyword>
+      <keyword>submit</keyword>
+      <keyword>same</keyword>
+      <keyword>next</keyword>
+      <keyword>future</keyword>
+      <keyword>submit</keyword>
+      <keyword>succeed</keyword>
+      <keyword>skip</keyword>
+      <keyword>suspend</keyword>
+      <keyword>wait</keyword>
+      <keyword>s</keyword>
+      <keyword>m</keyword>
+      <keyword>h</keyword>
+      <keyword>times</keyword>
+      <keyword>once</keyword>
+      <keyword>and</keyword>
+      <keyword>call</keyword>
+      <keyword>generate</keyword>
+      <keyword>execute</keyword>
+      <keyword>code</keyword>
+    </context>
+
+  </definitions>
+</language>

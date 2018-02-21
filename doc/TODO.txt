@@ -1,0 +1,120 @@
+﻿0. Název
+        COM-PL-ENT (Computational Platform for Enterprise) - v Latině 3.os. od compleo (=complete)
+        COM-PL-ETA
+1. Přidat parametry k modulům.
+2. Umožnit stejný modul volat na více místech s různými hodnotami parametrů.
+3. Nový typ modulu, který generuje spustitelný kód.
+4. Každý task má svoje vlastnosti/parametry. Kromě nich dědí i všechny vlastnosti/parametry od svých nadřazených tasků/skupin.
+
+
+TASK <task name> (<list of parameter names>)
+    [ EXECUTOR <executor name> ]
+    [ GENERATOR <generator name> ]
+    [ IMPORTANCE <number> ]
+    [ START WHEN
+        <task name> (<load timestamp function name>) { SUCCEEDED | FAILED | RUNNING | CANCELLED }
+        { { AND | OR } <task name> (<run timestamp function name>) { SUCCEEDED | FAILED | RUNNING | CANCELLED } }
+        ...
+    ]
+    [ NEXT RUN <run timestamp function name> ]
+    {
+        {
+            CALL
+                [ PARALLEL | SEQUENTIAL ] <task name> (<list of parameter values>)
+                ...
+        }
+        |
+        {
+            EXECUTE
+                <task script file name>
+        }
+        |
+        {
+            GENERATE
+                <task script file name>
+        }
+        |
+        {
+            GROUP
+                <task name> (<list parameter values>)
+                ...
+        }
+    }
+;
+
+
+Task feature values like IMPORTANCE, EXECUTOR, EXECUTOR TYPE, GENERATOR, or GENERATOR TYPE
+will be stored in the task's local variables importance, executor, executor_type, or generator_type resp.
+
+
+Values of these variables are denoted by ${importance}, ${executor}, ${generator}, ${executor_type}, or ${generator_type}.
+They can be used in dynamic script file names.
+This enables to have one definition of generic tasks for different executor types (Oracle, Teradata, Netezza, etc.).
+
+
+Example:
+
+
+TASK LOAD_TGT ( run_timestamp table_name historization_type historization_column_list ) IS
+  EXECUTE load_tgt_${historization_type}_${executor_type}.sql
+;
+
+
+Values of these variables will be inherited in called and grouped tasks
+unless they are redefined.
+
+
+It should be possible to define indirect task calls
+i.e., task name can contain ${<parameter name>}
+
+
+Example:
+
+
+TASK LOAD_TGT_TAB ( run_timestamp table_name table_alias historization_type historization_column_list ) IS
+  CALL
+    PREP_WRK ( ${table_name} )
+    LOAD_WRK_${table_alias} ( ${run_timestamp} ${table_name} )
+    LOAD_TGT ( ${run_timestamp} ${table_name} ${historization_type} ${historization_column_list} )
+;
+
+
+Task LOAD_TGT_TAB is generic and it is created once only.
+But it can be used to load more different tables.
+The only task that need to be coded for each table is LOAD_WRK_${table_name} and call
+of corresponding LOAD_TGT_TAB from the superior task or include it in the superior task group:
+
+
+TASK LOAD_WRK ( run_timestamp owner table_name executor ) IS
+  EXECUTE ${executor}/${owner}/load_wrk_${table_name}.sql
+;
+
+
+GROUP LOAD_TGT_DAILY_HIGH_IMPORTANCE ( run_timestamp ) IS
+  EXECUTOR edw
+  IMPORTANCE 1000
+  NEXT RUN next_day
+  MEMBERS
+    LOAD_TGT_TAB ( ${run_timestamp} SUBSCRIBER   SCD2II ( SUBSCRIBER_ID START_TIMESTAMP ) )
+    LOAD_TGT_TAB ( ${run_timestamp} SUBSCRIPTION SCD2C  ( SUBSCRIPTION_ID ) )
+;
+
+
+START LOAD_TGT_TAB ( ${run_timestamp} SUBSCRIBER SCD2II ( SUBSCRIBER_ID START_TIMESTAMP ) )
+  WHEN
+    -- check source
+    LOAD_STG ( this_run(${run_timestamp}) SUBSCRIBER ) SUCCEEDED AND
+    LOAD_TGT ( this_run(${run_timestamp}) SUBSCRIPTION ) SUCCEEDED AND
+    -- check prev
+    LOAD_WRK ( prev_run(${run_timestamp}) SUBSCRIBER ) SUCCEEDED AND
+    -- check concurrency
+    LOAD_WRK ( * ASSET ) NOT RUNNING AND
+    LOAD_WRK ( * ASSET ) NOT FAILED
+;
+
+
+--------------------------------------------------------------------------------
+
+
+EXECUTOR edw    IS teradata (ldap vfczprod etl_usr) ;
+EXECUTOR etlsrv IS ssh (etlsrv etl_usr) ;

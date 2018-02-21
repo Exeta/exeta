@@ -1,0 +1,7 @@
+# ssh connection from martin@localhost to exeta@localhost
+# martin@localhost
+# do not enter a passphrase
+ssh-keygen -t rsa
+ssh exeta@localhost mkdir -p .ssh
+cat .ssh/id_rsa.pub | ssh exeta@localhost 'cat >> .ssh/authorized_keys'
+ssh exeta@localhost
